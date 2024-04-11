@@ -1,5 +1,5 @@
 int relay = 13;
-int sensor = 2;
+int sensor = 3;
 
 unsigned long previousMillis = 0;    // Stores the last time the variable was updated
 unsigned long interval = 1000;       // Interval (in milliseconds) at which the variable will increment
@@ -32,8 +32,8 @@ void loop() {
     second = 0;
   }
 
-  if (minute >= 2) {
-    Serial.println("Deactivate relay");
+  if (minute >= 1) {
+    // Serial.println("Deactivate relay");
     // will turn off the relay
     digitalWrite(relay, HIGH);
     minute = 0;
@@ -42,9 +42,10 @@ void loop() {
 
   int val = digitalRead(sensor);
   if (val == HIGH) {    // detect movement
-    Serial.println("Activate relay");
+    // Serial.println("Activate relay");
     digitalWrite(relay, LOW);
     second = 0;
     minute = 0;
   }
+
 }
