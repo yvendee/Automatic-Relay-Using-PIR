@@ -11,6 +11,7 @@ void setup() {
   pinMode(relay, OUTPUT);
   pinMode(sensor, INPUT);
   Serial.begin(9600);
+  digitalWrite(relay, LOW);
 }
 
 void loop() {
