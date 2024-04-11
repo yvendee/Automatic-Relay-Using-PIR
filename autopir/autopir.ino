@@ -21,6 +21,8 @@ void loop() {
   if (currentMillis - previousMillis >= interval) {
     previousMillis = currentMillis;  // Save the last time the variable was updated
     second++;             // Increment the variable
+    Serial.print("Second: ");
+    Serial.println(second);
   }
 
   // Check if 2 minutes have passed, then execute the action
